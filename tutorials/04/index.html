@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Introduction</title>
+  <title>How Slidify Works?</title>
   <meta charset="utf-8">
-  <meta name="description" content="Introduction">
+  <meta name="description" content="How Slidify Works?">
   <meta name="author" content="Ramnath Vaidyanathan">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,7 +36,7 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Introduction</h1>
+    <h1>How Slidify Works?</h1>
     <h2>Slidify Workshop</h2>
     <p>Ramnath Vaidyanathan<br/></p>
   </hgroup>
@@ -46,76 +46,13 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
-  <hgroup>
-    <h2>Publishing to Github</h2>
-  </hgroup>
-  <article data-timings="">
-    <ol>
-<li>Add Local Repository</li>
-<li>Commit Changes</li>
-<li>Publish!</li>
-</ol>
-
-<pre><code class="r">knitr::knit_hooks$set(document = function(doc) {
-    gsub(&quot;```&quot;, &quot;```&quot;, doc)
-})
-</code></pre>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="centrepre" id="slide-2" style="background:;">
-  <hgroup>
-    <h2>My Report</h2>
-  </hgroup>
   <article data-timings="">
     
-<pre><code>Today I built a model
-
-```{r}
-fit = lm(dist ~ speed, data = cars)
-```
-
-and I got the slope
-
-
-```{r dist-speed, fig.width=5, fig.height=4}
-plot(cars)
-abline(fit)
-```
-</code></pre>
-
-
-<div id='draggable1' class="draggable ui-widget-content build">
-  <div class='triangle-border right'>
-    <p>title</p>
-
-  </div>
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
-  <hgroup>
-    <h2>Draggable</h2>
-  </hgroup>
-  <article data-timings="">
-    
-
-
-<div id='draggable2' class="draggable ui-widget-content build">
-  <div class='triangle-border '>
-    <p><strong>Direction</strong>: What is the direction of the relationship?</p>
-
-  </div>
-</div>
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="segue dark nobackground" id="slide-4" style="background:;">
+<slide class="segue dark nobackground" id="slide-2" style="background:;">
   <hgroup>
     <h2>Deck</h2>
   </hgroup>
@@ -315,7 +252,7 @@ qplot(wt, mpg, data = mtcars)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue dark nobackground" id="slide-10" style="background:;">
+<slide class="segue dark nobackground" id="slide-8" style="background:;">
   <hgroup>
     <h2>Slide</h2>
   </hgroup>
@@ -325,7 +262,7 @@ qplot(wt, mpg, data = mtcars)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="centrepre" id="slide-11" style="background:;">
+<slide class="centrepre" id="slide-9" style="background:;">
   <article data-timings="">
     <pre><code>--- {class: [class1, class2], id: id}
 
@@ -522,226 +459,7 @@ Some contents of block 2
   </aside>
 </slide>
 
-<slide class="segue dark nobackground" id="slide-16" style="background:;">
-  <hgroup>
-    <h2>Inheritance</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="centrepre RAW bigger" id="slide-17">
-<hgroup>
-  
-</hgroup>
-<article class = 'flexbox vcenter'>
-<pre><code>&lt;slide class=&quot;{{ slide.class }}&quot;&gt;
-  &lt;hgroup&gt;
-    {{{ slide.header }}}
-  &lt;/hgroup&gt;
-  &lt;article&gt;
-    {{{ slide.content }}}  
-
-
-
-  &lt;/article&gt;
-&lt;/slide&gt;
-</code></pre>
-
-</article>
-<!-- Presenter Notes -->
-<aside class="note">
-  <section>
-    <p>Consider the following layout. Suppose, you want some slides in your deck to display a footer with a logo.</p>
-
-  </section>
-</aside>
-</slide>
-<slide class="centrepre RAW bigger" id="slide-18">
-<hgroup>
-  
-</hgroup>
-<article class = 'flexbox vcenter'>
-<pre><code>&lt;slide class=&quot;{{ slide.class }}&quot;&gt;
-  &lt;hgroup&gt;
-    {{{ slide.header }}}
-  &lt;/hgroup&gt;
-  &lt;article&gt;
-    {{{ slide.content }}}  
-   &lt;footer class = &#39;logo&#39;&gt;
-      &lt;img src = &#39;path/to/logo&#39;&gt;&lt;/img&gt;
-   &lt;/footer&gt;
-  &lt;/article&gt;
-&lt;/slide&gt;
-</code></pre>
-
-</article>
-<!-- Presenter Notes -->
-<aside class="note">
-  <section>
-    <p>One way is to create a new slide layout adding the custom footer after <code>{{{ slide.content }}}</code>, saving it to <code>assets/layouts</code> and using it as a custom layout.</p>
-
-<p>However, this is not efficient for two reasons. </p>
-
-<ul>
-<li>It is not DRY and repeats code unnecessarily. </li>
-<li>When the default slide layout is modified, you need to manually modify the custom layout to ensure that layouts are in sync. This could happen when you decide to use a different HTML5 slide framework, which has a different markup for slides. This is where layout inheritance comes to play.</li>
-</ul>
-
-<p>Note that while defining your custom slide layout, you are essentially replacing the <code>{{{ slide.content }}}</code> placeholder in the slide layout by <code>{{{ slide.content }}}</code> + footer. Slidify provides a mechanism, where layouts can inherit from a parent layout, thereby simplifying the template considerably and keeping thing DRY.</p>
-
-  </section>
-</aside>
-</slide>
-<slide class="centrepre RAW bigger" id="slide-19">
-<hgroup>
-  
-</hgroup>
-<article class = 'flexbox vcenter'>
-<pre><code>---
-layout: slide
----    
-
-
-    {{{ slide.content }}}  
-   &lt;footer class = &#39;logo&#39;&gt;
-      &lt;img src = &#39;path/to/logo&#39;&gt;&lt;/img&gt;
-   &lt;/footer&gt;
-  &lt;/article&gt;
-&lt;/slide&gt;
-</code></pre>
-
-</article>
-<!-- Presenter Notes -->
-<aside class="note">
-  <section>
-    <p>This is the modified layout for this use-case using inheritance. The YAML front matter indicates that this template inherits from slide, which is the default slide layout.</p>
-
-  </section>
-</aside>
-</slide>
-<slide class="segue dark nobackground" id="slide-20" style="background:;">
-  <hgroup>
-    <h2>Journey of a Slide</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="centrepre" id="slide-21">
-<hgroup>
-  
-</hgroup>
-<article class = 'flexbox vcenter'>
-<pre><code>--- {class: class1, bg: yellow}
-
-## Slide Title
-
-Slide Contents
-
-*** =pnotes
-
-Some notes
-</code></pre>
-
-</article>
-<!-- Presenter Notes -->
-</slide>
-<slide class="centrepre" id="slide-22">
-<hgroup>
-  
-</hgroup>
-<article class = 'flexbox vcenter'>
-<pre><code>$html
-[1] &quot;&lt;h2&gt;Slide Title&lt;/h2&gt;\n\n&lt;p&gt;Slide Contents&lt;/p&gt;\n&quot;
-
-$header
-[1] &quot;&lt;h2&gt;Slide Title&lt;/h2&gt;&quot;
-
-$level
-[1] &quot;2&quot;
-
-$title
-[1] &quot;Slide Title&quot;
-
-$content
-[1] &quot;&lt;p&gt;Slide Contents&lt;/p&gt;\n&quot;
-
-$class
-[1] &quot;class1&quot;
-
-$bg
-[1] &quot;yellow&quot;
-</code></pre>
-
-</article>
-<!-- Presenter Notes -->
-</slide>
-<slide class="centrepre RAW" id="myhtml">
-<hgroup>
-  
-</hgroup>
-<article class = 'flexbox vcenter'>
-<pre><code class="html">&lt;slide class=&quot;{{ slide.class }}&quot; style=&quot;background:{{ slide.bg }};&quot;&gt;
-  {{# slide.header }}
-  &lt;hgroup&gt;
-    {{{ slide.header}}}
-  &lt;/hgroup&gt;
-  {{/ slide.header }}
-  &lt;article&gt;
-    {{{ slide.content }}}
-  &lt;/article&gt;
-  &lt;!-- Presenter Notes --&gt;
-  {{# slide.pnotes }}
-  &lt;aside class=&quot;note&quot; id=&quot;{{ id }}&quot;&gt;
-    &lt;section&gt;
-      {{{ html }}}
-    &lt;/section&gt;
-  &lt;/aside&gt;
-  {{/ slide.pnotes }}
-&lt;/slide&gt;
-</code></pre>
-
-<style>#myhtml pre{width: 95%}</style>
-
-</article>
-<!-- Presenter Notes -->
-</slide>
-<slide class="centrepre RAW" id="myhtml2">
-<hgroup>
-  
-</hgroup>
-<article class = 'flexbox vcenter'>
-<pre><code class="no-highlight">&lt;slide class=&quot;{{ slide.class }}&quot; style=&quot;background:{{ slide.bg }};&quot;&gt;
-  {{# slide.header }}
-  &lt;hgroup&gt;
-    {{{ slide.header}}}
-  &lt;/hgroup&gt;
-  {{/ slide.header }}
-  &lt;article&gt;
-    {{{ slide.content }}}
-  &lt;/article&gt;
-  &lt;!-- Presenter Notes --&gt;
-  {{# slide.pnotes }}
-  &lt;aside class=&quot;note&quot; id=&quot;{{ id }}&quot;&gt;
-    &lt;section&gt;
-      {{{ html }}}
-    &lt;/section&gt;
-  &lt;/aside&gt;
-  {{/ slide.pnotes }}
-&lt;/slide&gt;
-</code></pre>
-
-<style>#myhtml2 pre{width: 95%}</style>
-
-</article>
-<!-- Presenter Notes -->
-</slide>
-<slide class="dark nobackground segue" id="slide-25" style="background:;">
+<slide class="dark nobackground segue" id="slide-14" style="background:;">
   <hgroup>
     <h2>Code Chunks</h2>
   </hgroup>
@@ -809,7 +527,7 @@ rnorm(5)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="dark quote nobackground" id="slide-28" style="background:;">
+<slide class="dark quote nobackground" id="slide-17" style="background:;">
   <article data-timings="">
     <p><q>The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.</q></p>
 
@@ -817,7 +535,7 @@ rnorm(5)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue dark nobackground" id="slide-29" style="background:;">
+<slide class="segue dark nobackground" id="slide-18" style="background:;">
   <hgroup>
     <h2>Frameworks</h2>
   </hgroup>
@@ -830,10 +548,24 @@ rnorm(5)
 <slide class="centrepre wrap" id="impress-example" style="background:;">
   <article data-timings="">
     
-<pre><code>Warning: cannot open file &#39;testImpress.Rmd&#39;: No such file or directory
-</code></pre>
+<pre><code>---
+title: Testing ImpressJS
+author: Ramnath Vaidyanathan
+mode  : selfcontained
+framework: impressjs
+github: {user: ramnathv, repo: slidify}
+twitter: {text: &quot;Slidify with impress.js!&quot;}
+--- .slide x:-1000 y:-1500
 
-<pre><code>Error: cannot open the connection
+&lt;q&gt;Aren&#39;t you just **bored** with all those slides-based presentations?&lt;/q&gt;
+
+--- .slide x:0 y:-1500
+
+&lt;q&gt;Don&#39;t you think that presentations given **in modern browsers** shouldn&#39;t **copy the limits** of &#39;classic&#39; slide decks?&lt;/q&gt;
+
+--- .slide x:1000 y:-1500
+
+&lt;q&gt;Would you like to **impress your audience** with **stunning visualization** of your talk?&lt;/q&gt;
 </code></pre>
 
 <style>#impress-example pre{width: 95%}</style>
@@ -849,25 +581,25 @@ rnorm(5)
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Publishing to Github'>
+        data-slide=1 title=''>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='My Report'>
+        data-slide=2 title='Deck'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Draggable'>
+        data-slide=3 title=''>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Deck'>
+        data-slide=4 title=''>
          4
       </a>
     </li>
@@ -891,7 +623,7 @@ rnorm(5)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title=''>
+        data-slide=8 title='Slide'>
          8
       </a>
     </li>
@@ -903,7 +635,7 @@ rnorm(5)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Slide'>
+        data-slide=10 title=''>
          10
       </a>
     </li>
@@ -927,7 +659,7 @@ rnorm(5)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title=''>
+        data-slide=14 title='Code Chunks'>
          14
       </a>
     </li>
@@ -939,7 +671,7 @@ rnorm(5)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Inheritance'>
+        data-slide=16 title=''>
          16
       </a>
     </li>
@@ -951,7 +683,7 @@ rnorm(5)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title=''>
+        data-slide=18 title='Frameworks'>
          18
       </a>
     </li>
@@ -959,72 +691,6 @@ rnorm(5)
       <a href="#" target="_self" rel='tooltip' 
         data-slide=19 title=''>
          19
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Journey of a Slide'>
-         20
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title=''>
-         21
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title=''>
-         22
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title=''>
-         23
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title=''>
-         24
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Code Chunks'>
-         25
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title=''>
-         26
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title=''>
-         27
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title=''>
-         28
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Frameworks'>
-         29
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title=''>
-         30
       </a>
     </li>
   </ul>

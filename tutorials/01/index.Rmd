@@ -1,7 +1,9 @@
 ---
 title       : Slidify
 subtitle    : Interactive Docs with R
-hitheme: pojoaque
+hitheme     : solarized_light
+license     : by-nc-sa
+url         : {lib: "../../libraries"}
 --- .dark .nobackground .quote
 
 <q> Slidify helps create, customize and share, elegant, dynamic and interactive HTML5 documents using R Markdown.</q>
@@ -31,13 +33,73 @@ NOTE: While the installation process from `github` is relatively painless for Ma
 
 <q> Slidify helps __create__, customize and share, elegant, dynamic and interactive HTML5 documents using R Markdown.</q>
 
----
+--- .bigger
+
+## Create
+
+The easiest way to get started is by using the `author` function to set up a scaffold for your slide deck. This will do the following
+
+> - create a directory for the deck.
+> - copy necessary scaffolding for the deck.
+> - if you have git installed, then
+    - initialize a git repo
+    - switch to a gh-pages branch
+    - commit all changes to the repo.
+> - open index.Rmd for you to edit.
+ 
+
+--- .centrepre &vcenter .bigger
+
+## Setup
+
+<a class='example'>Your Turn</a>
+  
+```
+author("myDeck")
+```
+
+*** =pnotes
 
 <iframe src='assets/img/create_deck.svg' width=960px></iframe>
 
---- .segue bg:blue
+--- .centrepre #demo1-create
 
-## Demo 1 | Create
+<a class='example'>Your Turn</a>
+
+    ---
+    title       : 
+    subtitle    : 
+    author      : 
+    job         : 
+    framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+    highlighter : highlight.js  # {highlight.js, prettify, highlight}
+    hitheme     : tomorrow      # 
+    widgets     : []            # {mathjax, quiz, bootstrap}
+    mode        : selfcontained # {standalone, draft}
+    ---
+    
+    ## Read-And-Delete
+    
+    1. Edit YAML front matter
+    2. Write using R Markdown
+    3. Use an empty line followed by three dashes to separate slides!
+
+    --- .class #id 
+    
+    ## Slide 2
+
+
+--- .centrepre
+
+## Slidify
+
+<a class='example'>Your Turn</a>
+
+```
+slidify("index.Rmd")
+browseURL("index.html")
+```
+
 
 --- .nobackground .quote
 
@@ -53,205 +115,9 @@ Slidify is highly modular and attempts to achieve clean separation of content fr
 > 2. Layouts
 > 3. Widgets
 
---- .segue bg:blue
-
-## Demo 2 | Frameworks
-
---- .segue bg:indigo
-
-## How Slidify Works?
-
----
-
-<iframe src='assets/img/knit.svg' width=800px height=250px>
-</iframe> 
-
----
-
-<iframe src='assets/img/split_apply_combine.svg' width=800px height=250px>
-</iframe> 
-
-
----
-
-<iframe src='assets/img/split.svg' width=800px height=250px>
-</iframe> 
-
----
-
-<iframe src='assets/img/apply.svg' width=800px height=250px>
-</iframe> 
-
-
----
-
-<iframe src='assets/img/combine.svg' width=800px height=250px>
-</iframe> 
-
---- .segue bg:indigo
-
-## Journey of a Slide
-
---- .bigger
-
-## Slide
-
-```{r echo = F, comment = NA, cache = F, results = 'hide'}
-slide <- '--- {class: class1, bg: yellow, id: id1}
-
-## Slide Title
-
-Slide Contents
-
-*** =pnotes
-
-Some notes'
-```
-
-    --- {class: class1, bg: yellow, id: id1}
-    
-    ## Slide Title
-    
-    Slide Contents
-    
-    *** =pnotes
-    
-    Some notes
-
----
-
-<iframe src='assets/img/raw_slide.svg' width=800px height=250px>
-</iframe> 
-
----
-
-<a class='example'>Payload</a>
-
-```{r echo = F, comment = NA}
-payload <- slidify:::parse_slide(slide)
-payload
-```
-
----
-
-<iframe src='assets/img/parse_slide.svg' width=800px height=250px>
-</iframe> 
-
-
---- .RAW .bigger
-
-<a class='example'>Layout</a>
-
-```{r echo = F, comment = NA}
-layout <- slidify:::read_file('libraries/frameworks/io2012/layouts/slide.html')
-cat(layout)
-```
-
----
-
-<iframe src='assets/img/layout_slide.svg' width=800px height=250px>
-</iframe> 
-
---- .bigger
-
-<a class='example'>Rendered</a>
-
-```{r render, echo = F, comment = NA}
-rendered = rCharts::render_template(layout, list(slide = payload))
-cat(rendered)
-```
-
----
-
-<iframe src='assets/img/render_slide.svg' width=800px height=250px>
-</iframe> 
-
---- {class: class1, bg: yellow, id: id1}
-    
-## Slide Title
-    
-Slide Contents
-    
-*** =pnotes
-    
-Some notes
-
---- .segue .nobackground .dark
-
-## Slide Properties
-
----
-
-<img style='margin-top: -40px' class="center" src='assets/img/slide_properties.svg' width=960px height=250px></img> 
-
----
-
-## Slide Properties
-
-| **Variable**    | **Description**                       |
-|-----------------|---------------------------------------|
-| `slide.title`   | The title of the slide with no markup |
-| `slide.header`  | The title of the slide with markup    |
-| `slide.level`   | The title header level (h1 - h6)      |
-| `slide.content` | The contents of the slide sans header |
-| `slide.html`    | The contents of the slide with header |
-| `slide.num`     | The number of the slide               |
-| `slide.id`      | The id assigned to the slide          |
-| `slide.class`   | The class assigned to the slide       |
-| `slide.bg`      | The background assigned to the slide  |
-| `slide.myblock`   | The slide block named myblock       |
-| `slide.blocks`  | The slide blocks which are not named  |
-| `slide.rendered`| The rendered slide                    |
-
----
-
-## Carousel Slide
-
-<a class='example'>slide</a>
-
-    --- &carousel .span12
-    
-    ## Carousel
-    
-    
-    *** {class: active, img: "http://placehold.it/960x500"}
-    
-    Image 1
-    
-    *** {img: "http://placehold.it/960x500"}
-    
-    Image 2
-
-
-
---- .RAW .smaller
-
-<a class='example'>layout</a>
-
-```{r results = 'asis', echo = F}
-writeLines(paste('   ', readLines('assets/layouts/carousel.html')))
-```
-
-
---- &carousel .span12 #mycarouselslide
-
-<a class='example'>view</a>
-
-
-*** {class: active, img: "assets/img/split.svg"}
-
-Image 1
-
-*** {img: "assets/img/apply.svg"}
-
-Image 2
-
-<style>
-#mycarouselslide img {
-  width: 800px;
-  height: 600px;
-}
-</style>
+<div class='build'>
+<p>We will look at customization in more detail later.</p>
+</div>
 
 --- .nobackground .quote
 
@@ -259,14 +125,62 @@ Image 2
 
 --- .bigger
 
-## Publish
+## Share
 
-Share your document easily on [github](http://github.com), [rpubs](http://rpubs.com) and [dropbox](http://dropbox.com)
+Share your document easily on 
+
+> - [github](http://github.com)
+> - [rpubs](http://rpubs.com) 
+> - [dropbox](http://dropbox.com)
+
+---
+
+## Share on Github
+
+The default option is to publish to github. 
+
 
 ```
-slidify('index.Rmd')
-publish('mydeck', 'ramnathv')
+publish('myDeck', 'ramnathv')
 ```
+
+<br/>
+
+
+In order to use this option, you need to
+
+- Install `git`.
+- Set up a `github` account.
+- Set up SSH access to `github`.
+
+Alternately, you can also use the github GUI client to publish. This [screencast](http://www.youtube.com/watch?v=GmcRWitLI0o) provides details.
+
+---
+
+## Share on Dropbox
+
+You can share your deck using Dropbox, by copying it to your Public folder.
+
+```
+publish('myDeck', host = "dropbox")
+```
+
+You can also drag-and-drop your slide folder to your Public Dropbox folder and get a link to `index.html`. Press `p` to see a screenshot of how to do this.
+
+*** =pnotes
+
+![](http://codingsomething.files.wordpress.com/2013/02/screenshot.png?w=652)
+
+---
+
+## Share on RPubs
+
+[RPubs](http://rpubs.com) is a service provided by [RStudio](http://rstudio.com) to share RMarkdown documents. Here are the steps to share on RPubs.
+
+> 1. Change `mode` to `standalone` in `index.Rmd`.
+> 2. Slidify the deck `slidify('index.Rmd')`.
+> 3. Hit Publish on the RStudio preview window.
+> 4. Follow the instructions from there.
 
 --- .nobackground .quote
 
@@ -275,6 +189,12 @@ publish('mydeck', 'ramnathv')
 ---
 
 ## Dynamic
+
+Dynamic content implies that plots, tables and other results in the deck can be dynamically generated using code snippets. Slidify uses the `knitr` package to accomplish this.
+
+<img class='center' src='http://ecx.images-amazon.com/images/I/41kI1dxXGfL.jpg' height=150px width=300px/>
+
+--- &vcenter
 
 ```{r echo = F, comment = NA, results = 'asis'}
 include('include/reproducible.txt')
@@ -285,11 +205,6 @@ include('include/reproducible.txt')
 ```{r child = 'include/reproducible.txt'}
 ```
 
----
-
-## HT to knitr and @yihui
-
-<img class='center' src='http://ecx.images-amazon.com/images/I/41kI1dxXGfL.jpg' />
 
 --- .nobackground .quote
 
@@ -297,17 +212,26 @@ include('include/reproducible.txt')
 
 ---
 
-## Interactive Quiz
+## Interactive
 
-    --- &radio  
-    ## Interactive Quiz
+Slidify uses `widgets` to add interactive content to slides.
+
+--- &vcenter #interactive-quiz
+
+<a class='example'>Your Turn</a>
+
+    ---
+    title: Interactive Quiz
+    widgets: [bootstrap, quiz]
+    --- &radio
+    
+    ## Question 1
     
     What is 1 + 1?
     
     1. 1 
     2. _2_
     3. 3
-    4. 4
     
     *** .hint
     
@@ -319,14 +243,14 @@ include('include/reproducible.txt')
 
 --- &radio
 
-## Interactive Quiz
+## Question 1
 
 What is 1 + 1?
 
 1. 1 
 2. _2_
 3. 3
-4. 4
+
 
 *** .hint
 
@@ -359,150 +283,36 @@ n1$print('chart1')
 
 ```
 
---- .segue bg:blue
+--- .segue bg:indigo
 
-## Interactive Slides Demo
-
---- .segue .dark
-
-## Interactive Visualizations
-
---- .fill .nobackground
-
-![img](assets/img/rCharts.png)
-
---- .quote
-
-<q>rCharts is an R package to create, customize and share interactive visualizations, using a lattice-like formula interface.</q>
-
---- .segue .dark .nobackground
-
-## rCharts Demos
+## How Slidify Works?
 
 ---
 
-## Basic Plot
-
-```{r chart1, eval = F, tidy = F, results = 'hide'}
-r1 <- rPlot(mpg ~ wt | am + vs, 
-  data = mtcars, 
-  color = 'gear',
-  type = 'point'
-)
-r1
-```
+<iframe src='assets/img/knit.svg' width=800px height=250px>
+</iframe> 
 
 ---
 
-```{r ref.label = 'chart1', results = 'asis', echo = F}
-```
+<iframe src='assets/img/split_apply_combine.svg' width=800px height=250px>
+</iframe> 
+
 
 ---
 
-## Add Controls
-
-```{r chart2, eval = F, tidy = F, results = 'hide'}
-r1$addControls("x", "wt", names(mtcars))
-r1$addControls("y", "mpg", names(mtcars))
-r1
-```
+<iframe src='assets/img/split.svg' width=800px height=250px>
+</iframe> 
 
 ---
 
-```{r ref.label = 'chart2', results = 'asis', echo = F}
-```
+<iframe src='assets/img/apply.svg' width=800px height=250px>
+</iframe> 
 
---- .segue .dark .nobackground
-
-## [NYT Home Prices](http://www.nytimes.com/interactive/2011/05/31/business/economy/case-shiller-index.html)
-
---- &tabs
-
-## Get Data
-
-
-*** 
-
-## Code
-
-```{r results = 'asis'}
-require(PerformanceAnalytics)
-data(managers)
-managers <- na.omit(managers)
-data_ = data.frame(
-  date = format(index(managers), "%Y-%m-%d"),
-  coredata(cumprod(managers + 1)*100)
-)
-```
-
-*** .active
-
-## Data
-
-```{r results = 'asis', echo = F}
-require(xtable)
-options(xtable.type = 'html', xtable.include.rownames = F)
-xtable(head(data_, 10))
-```
-
-
---- .bigger &tabs
-
-## Process Data
-
-*** 
-
-## Code
-
-```{r}
-require(reshape2)
-# melt data frame into long form
-data_m <- melt(data_, id = "date", 
-  variable.name = 'manager', 
-  value.name = 'val'
-)
-```
-
-*** .active
-
-## Data
-
-```{r results = 'asis', echo = F}
-xtable(head(data_m, 10))
-```
-
---- .bigger
-
-## Visualize Data
-
-```{r nythome2, results = 'hide'}
-require(rCharts)
-
-# initialize chart and set path to chart library
-p2 <- rCharts$new()
-p2$setLib('libraries/widgets/nyt_home')
-
-# pass description, plot data and groups variable
-p2$set(
-  description = "This data comes from the managers dataset 
-  included in the R package PerformanceAnalytics.",
-  data = data_m,
-  groups = "manager",
-  height = 0,
-  width = 0
-)
-p2
-```
 
 ---
 
-```{r ref.label = 'nythome2', echo = F, results = 'asis'}
-
-```
-
-
-
-
+<iframe src='assets/img/combine.svg' width=800px height=250px>
+</iframe> 
 
 ---
 
@@ -511,11 +321,10 @@ p2
 1. Kenton Russel and Thomas Reinholdsson for coauthoring rCharts.
 2. Yihui Xie for knitr.
 3. Joe Cheng for Shiny.
-4. Jeffrey Horner and RStudio for Markdown.
+4. Jeffrey Horner and RStudio for R Markdown.
 5. Hadley Wickham for several R packages.
 6. Authors of all the JS Libraries I have liberally used.
 7. Authors of several presentation libraries in Ruby/Python/JS.
-
 
 
 

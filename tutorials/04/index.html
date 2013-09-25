@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction">
+  <meta name="author" content="Ramnath Vaidyanathan">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/solarized_light.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/app.css"></link>
+<link rel=stylesheet href="./assets/css/callouts.css"></link>
+<link rel=stylesheet href="./assets/css/draggable.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="http://fonts.googleapis.com/css?family=Crimson+Text"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Introduction</h1>
+    <h2>Slidify Workshop</h2>
+    <p>Ramnath Vaidyanathan<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Publishing to Github</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Add Local Repository</li>
+<li>Commit Changes</li>
+<li>Publish!</li>
+</ol>
+
+<pre><code class="r">knitr::knit_hooks$set(document = function(doc) {
+    gsub(&quot;```&quot;, &quot;```&quot;, doc)
+})
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>My Report</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<pre><code>Today I built a model
+
+```{r}
+fit = lm(dist ~ speed, data = cars)
+```
+
+and I got the slope
+
+
+```{r dist-speed, fig.width=5, fig.height=4}
+plot(cars)
+abline(fit)
+```
+</code></pre>
+
+
+<div id='draggable1' class="draggable ui-widget-content build">
+  <div class='triangle-border right'>
+    <p>title</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Draggable</h2>
+  </hgroup>
+  <article data-timings="">
+    
+
+
+<div id='draggable2' class="draggable ui-widget-content build">
+  <div class='triangle-border '>
+    <p><strong>Direction</strong>: What is the direction of the relationship?</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark nobackground" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Deck</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="step3a" style="background:;">
+  <article data-timings="">
+    
+<pre><code>---
+title: Slidify
+author: Ramnath Vaidyanathan
+framework: io2012
+---
+## Get Started
+
+Slidify is easy to use, only three rules!
+
+1. Write content using R Markdown
+3. Add properties using YAML
+4. Separate slides using `---`
+
+---
+## Example Slide
+
+Let us create a __scatterplot__
+
+```{r}
+require(ggplot2)
+qplot(wt, mpg, data = mtcars)
+```
+</code></pre>
+
+
+<div id='draggable5' class="draggable ui-widget-content ">
+  <div class='callout left'>
+    <p>Properties</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="step3b" style="background:;">
+  <article data-timings="">
+    
+<pre><code>---
+title: Slidify
+author: Ramnath Vaidyanathan
+framework: io2012
+---
+## Get Started
+
+Slidify is easy to use, only three rules!
+
+1. Write content using R Markdown
+3. Add properties using YAML
+4. Separate slides using `---`
+
+---
+## Example Slide
+
+Let us create a __scatterplot__
+
+```{r}
+require(ggplot2)
+qplot(wt, mpg, data = mtcars)
+```
+</code></pre>
+
+
+<div id='draggable6' class="draggable ui-widget-content ">
+  <div class='callout left'>
+    <p>Slide</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="step3c" style="background:;">
+  <article data-timings="">
+    
+<pre><code>---
+title: Slidify
+author: Ramnath Vaidyanathan
+framework: io2012
+---
+## Get Started
+
+Slidify is easy to use, only three rules!
+
+1. Write content using R Markdown
+3. Add properties using YAML
+4. Separate slides using `---`
+
+---
+## Example Slide
+
+Let us create a __scatterplot__
+
+```{r}
+require(ggplot2)
+qplot(wt, mpg, data = mtcars)
+```
+</code></pre>
+
+
+<div id='draggable7' class="draggable ui-widget-content ">
+  <div class='callout left'>
+    <p>Separator</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="step3d" style="background:;">
+  <article data-timings="">
+    
+<pre><code>---
+title: Slidify
+author: Ramnath Vaidyanathan
+framework: io2012
+---
+## Get Started
+
+Slidify is easy to use, only three rules!
+
+1. Write content using R Markdown
+3. Add properties using YAML
+4. Separate slides using `---`
+
+---
+## Example Slide
+
+Let us create a __scatterplot__
+
+```{r}
+require(ggplot2)
+qplot(wt, mpg, data = mtcars)
+```
+</code></pre>
+
+
+<div id='draggable8' class="draggable ui-widget-content ">
+  <div class='callout right'>
+    <p>Markdown</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="step3e" style="background:;">
+  <article data-timings="">
+    
+<pre><code>---
+title: Slidify
+author: Ramnath Vaidyanathan
+framework: io2012
+---
+## Get Started
+
+Slidify is easy to use, only three rules!
+
+1. Write content using R Markdown
+3. Add properties using YAML
+4. Separate slides using `---`
+
+---
+## Example Slide
+
+Let us create a __scatterplot__
+
+```{r}
+require(ggplot2)
+qplot(wt, mpg, data = mtcars)
+```
+</code></pre>
+
+
+<div id='draggable9' class="draggable ui-widget-content ">
+  <div class='callout right'>
+    <p>Code Chunk</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark nobackground" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Slide</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="slide-11" style="background:;">
+  <article data-timings="">
+    <pre><code>--- {class: [class1, class2], id: id}
+
+## Title
+
+Some content
+
+*** {name: block1, class: class3}
+
+## Block1 Title
+
+Some contents of block 1
+
+*** {bg: green}
+
+## Block2 Title
+
+Some contents of block 2
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="step1a" style="background:;">
+  <article data-timings="">
+    
+<pre><code class="no-highlight">
+ --- {class: [class1, class2], id: id}
+
+ ## Title
+
+ Some content
+
+ *** {name: block1, class: class3}
+
+ ## Block1 Title
+
+ Some contents of block 1
+
+ *** {bg: green}
+
+ ## Block2 Title
+
+ Some contents of block 2
+
+
+</code></pre>
+
+
+<div id='' class="draggable ui-widget-content ">
+  <div class='callout right'>
+    <p>Properties</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <h3>Properties</h3>
+
+<p>Slide properties are key-value pairs that are passed to the layout. You can specify class, id and bg and style the slide, either by using built in classes, or specifying additional css.</p>
+
+<pre><code>--- {class: [class1, class2], id: id}
+</code></pre>
+
+<p>You can also use symbolic css style prefixes for frequently used properties. For instance, a dot indicates class, a hash refers to id and an ampersand identifies a layout.</p>
+
+<pre><code>--- .class1 .class2 #id
+</code></pre>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="centrepre" id="step1b" style="background:;">
+  <article data-timings="">
+    
+<pre><code class="no-highlight">
+ --- {class: [class1, class2], id: id}
+
+ ## Title
+
+ Some content
+
+ *** {name: block1, class: class3}
+
+ ## Block1 Title
+
+ Some contents of block 1
+
+ *** {bg: green}
+
+ ## Block2 Title
+
+ Some contents of block 2
+
+
+</code></pre>
+
+
+<div id='' class="draggable ui-widget-content ">
+  <div class='callout left'>
+    <p>Title</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="step1c" style="background:;">
+  <article data-timings="">
+    
+<pre><code class="no-highlight">
+ --- {class: [class1, class2], id: id}
+
+ ## Title
+
+ Some content
+
+ *** {name: block1, class: class3}
+
+ ## Block1 Title
+
+ Some contents of block 1
+
+ *** {bg: green}
+
+ ## Block2 Title
+
+ Some contents of block 2
+
+
+</code></pre>
+
+
+<div id='' class="draggable ui-widget-content ">
+  <div class='callout left'>
+    <p>Content</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="step1d" style="background:;">
+  <article data-timings="">
+    
+<pre><code class="no-highlight">
+ --- {class: [class1, class2], id: id}
+
+ ## Title
+
+ Some content
+
+ *** {name: block1, class: class3}
+
+ ## Block1 Title
+
+ Some contents of block 1
+
+ *** {bg: green}
+
+ ## Block2 Title
+
+ Some contents of block 2
+
+
+</code></pre>
+
+
+<div id='' class="draggable ui-widget-content ">
+  <div class='callout left'>
+    <p>Blocks</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <h2>Blocks</h2>
+
+<p>Blocks are slides nested within a slide, identified by three stars. Just like a slide, they can contain  properties, title and content. </p>
+
+<p>There are two types of blocks - named and unnamed. A block can be named by specifying the property <code>{name: block1}</code> (or using the symbolic shortcut <code>{=block1}</code>). </p>
+
+<p>A block with the name <code>block1</code> can be accessed in a slide layout as <code>slide.block1</code>. The title and content of this block can be accessed as <code>slide.block1.title</code> and <code>slide.block1.content</code>. Unnamed blocks are aggregated into the namespace <code>slide.blocks</code>. </p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="segue dark nobackground" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Inheritance</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre RAW bigger" id="slide-17">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code>&lt;slide class=&quot;{{ slide.class }}&quot;&gt;
+  &lt;hgroup&gt;
+    {{{ slide.header }}}
+  &lt;/hgroup&gt;
+  &lt;article&gt;
+    {{{ slide.content }}}  
+
+
+
+  &lt;/article&gt;
+&lt;/slide&gt;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+<aside class="note">
+  <section>
+    <p>Consider the following layout. Suppose, you want some slides in your deck to display a footer with a logo.</p>
+
+  </section>
+</aside>
+</slide>
+<slide class="centrepre RAW bigger" id="slide-18">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code>&lt;slide class=&quot;{{ slide.class }}&quot;&gt;
+  &lt;hgroup&gt;
+    {{{ slide.header }}}
+  &lt;/hgroup&gt;
+  &lt;article&gt;
+    {{{ slide.content }}}  
+   &lt;footer class = &#39;logo&#39;&gt;
+      &lt;img src = &#39;path/to/logo&#39;&gt;&lt;/img&gt;
+   &lt;/footer&gt;
+  &lt;/article&gt;
+&lt;/slide&gt;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+<aside class="note">
+  <section>
+    <p>One way is to create a new slide layout adding the custom footer after <code>{{{ slide.content }}}</code>, saving it to <code>assets/layouts</code> and using it as a custom layout.</p>
+
+<p>However, this is not efficient for two reasons. </p>
+
+<ul>
+<li>It is not DRY and repeats code unnecessarily. </li>
+<li>When the default slide layout is modified, you need to manually modify the custom layout to ensure that layouts are in sync. This could happen when you decide to use a different HTML5 slide framework, which has a different markup for slides. This is where layout inheritance comes to play.</li>
+</ul>
+
+<p>Note that while defining your custom slide layout, you are essentially replacing the <code>{{{ slide.content }}}</code> placeholder in the slide layout by <code>{{{ slide.content }}}</code> + footer. Slidify provides a mechanism, where layouts can inherit from a parent layout, thereby simplifying the template considerably and keeping thing DRY.</p>
+
+  </section>
+</aside>
+</slide>
+<slide class="centrepre RAW bigger" id="slide-19">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code>---
+layout: slide
+---    
+
+
+    {{{ slide.content }}}  
+   &lt;footer class = &#39;logo&#39;&gt;
+      &lt;img src = &#39;path/to/logo&#39;&gt;&lt;/img&gt;
+   &lt;/footer&gt;
+  &lt;/article&gt;
+&lt;/slide&gt;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+<aside class="note">
+  <section>
+    <p>This is the modified layout for this use-case using inheritance. The YAML front matter indicates that this template inherits from slide, which is the default slide layout.</p>
+
+  </section>
+</aside>
+</slide>
+<slide class="segue dark nobackground" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Journey of a Slide</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="slide-21">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code>--- {class: class1, bg: yellow}
+
+## Slide Title
+
+Slide Contents
+
+*** =pnotes
+
+Some notes
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="centrepre" id="slide-22">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code>$html
+[1] &quot;&lt;h2&gt;Slide Title&lt;/h2&gt;\n\n&lt;p&gt;Slide Contents&lt;/p&gt;\n&quot;
+
+$header
+[1] &quot;&lt;h2&gt;Slide Title&lt;/h2&gt;&quot;
+
+$level
+[1] &quot;2&quot;
+
+$title
+[1] &quot;Slide Title&quot;
+
+$content
+[1] &quot;&lt;p&gt;Slide Contents&lt;/p&gt;\n&quot;
+
+$class
+[1] &quot;class1&quot;
+
+$bg
+[1] &quot;yellow&quot;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="centrepre RAW" id="myhtml">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="html">&lt;slide class=&quot;{{ slide.class }}&quot; style=&quot;background:{{ slide.bg }};&quot;&gt;
+  {{# slide.header }}
+  &lt;hgroup&gt;
+    {{{ slide.header}}}
+  &lt;/hgroup&gt;
+  {{/ slide.header }}
+  &lt;article&gt;
+    {{{ slide.content }}}
+  &lt;/article&gt;
+  &lt;!-- Presenter Notes --&gt;
+  {{# slide.pnotes }}
+  &lt;aside class=&quot;note&quot; id=&quot;{{ id }}&quot;&gt;
+    &lt;section&gt;
+      {{{ html }}}
+    &lt;/section&gt;
+  &lt;/aside&gt;
+  {{/ slide.pnotes }}
+&lt;/slide&gt;
+</code></pre>
+
+<style>#myhtml pre{width: 95%}</style>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="centrepre RAW" id="myhtml2">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="no-highlight">&lt;slide class=&quot;{{ slide.class }}&quot; style=&quot;background:{{ slide.bg }};&quot;&gt;
+  {{# slide.header }}
+  &lt;hgroup&gt;
+    {{{ slide.header}}}
+  &lt;/hgroup&gt;
+  {{/ slide.header }}
+  &lt;article&gt;
+    {{{ slide.content }}}
+  &lt;/article&gt;
+  &lt;!-- Presenter Notes --&gt;
+  {{# slide.pnotes }}
+  &lt;aside class=&quot;note&quot; id=&quot;{{ id }}&quot;&gt;
+    &lt;section&gt;
+      {{{ html }}}
+    &lt;/section&gt;
+  &lt;/aside&gt;
+  {{/ slide.pnotes }}
+&lt;/slide&gt;
+</code></pre>
+
+<style>#myhtml2 pre{width: 95%}</style>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="dark nobackground segue" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Code Chunks</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="chunk1" style="background:;">
+  <article data-timings="">
+    
+<pre><code>```{r example, fig.width = 6, comment = NA}
+x &lt;- 1+1
+rnorm(5)
+```
+</code></pre>
+
+
+<div id='markup' class="draggable ui-widget-content build">
+  <div class='callout left'>
+    <p>Markup</p>
+
+  </div>
+</div>
+<div id='label' class="draggable ui-widget-content build">
+  <div class='callout top'>
+    <p>Label</p>
+
+  </div>
+</div>
+<div id='options' class="draggable ui-widget-content build">
+  <div class='callout top'>
+    <p>Options</p>
+
+  </div>
+</div>
+<div id='code1' class="draggable ui-widget-content build">
+  <div class='callout bottom'>
+    <p>Code</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="chunk2" style="background:;">
+  <article data-timings="">
+    
+<pre><code>```{r example, fig.width = 6, comment = NA}
+x &lt;- 1+1
+rnorm(5)
+```
+</code></pre>
+
+
+<div id='markup' class="draggable ui-widget-content ">
+  <div class='callout left'>
+    <p>Markup</p>
+
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="dark quote nobackground" id="slide-28" style="background:;">
+  <article data-timings="">
+    <p><q>The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.</q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark nobackground" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Frameworks</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre wrap" id="impress-example" style="background:;">
+  <article data-timings="">
+    
+<pre><code>Warning: cannot open file &#39;testImpress.Rmd&#39;: No such file or directory
+</code></pre>
+
+<pre><code>Error: cannot open the connection
+</code></pre>
+
+<style>#impress-example pre{width: 95%}</style>
+
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Publishing to Github'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='My Report'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Draggable'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Deck'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title=''>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title=''>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title=''>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Slide'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title=''>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title=''>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title=''>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title=''>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title=''>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Inheritance'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title=''>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title=''>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title=''>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Journey of a Slide'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title=''>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title=''>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title=''>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title=''>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Code Chunks'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title=''>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title=''>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title=''>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Frameworks'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title=''>
+         30
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="./assets/js/z_app.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="http://bartaz.github.io/sandbox.js/jquery.highlight.js"></script>
+
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

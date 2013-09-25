@@ -1,0 +1,5 @@
+# TWEAK THESE SETTINGS, ESPECIALLY USER AND REPO
+title: My Lectures
+github: {user: slidify, repo: workshops}
+biglogo: "slidify_logo_big.png"
+logo: "slidify_logo_small.png"

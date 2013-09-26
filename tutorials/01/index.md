@@ -4,6 +4,7 @@ subtitle    : Interactive Docs with R
 hitheme     : solarized_light
 license     : by-nc-sa
 url         : {lib: "../../libraries"}
+editlink    : "tutorials/01"
 --- .dark .nobackground .quote
 
 <q> Slidify helps create, customize and share, elegant, dynamic and interactive HTML5 documents using R Markdown.</q>

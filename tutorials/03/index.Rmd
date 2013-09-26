@@ -6,7 +6,7 @@ mode     : selfcontained # {standalone, draft}
 url      : {lib: "../../libraries"}
 hitheme  : solarized_light
 widgets  : [bootstrap]
-editlink : "tutorials/02"
+editlink : "tutorials/03"
 assets:
   js:
     - "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"
@@ -229,7 +229,7 @@ Note that while defining your custom slide layout, you are essentially replacing
 
 This is the modified layout for this use-case using inheritance. The YAML front matter indicates that this template inherits from slide, which is the default slide layout.
 
----
+--- bg:lightgoldenrodyellow
 
 <a class="example">Your Turn</a>
 
@@ -346,7 +346,7 @@ Image 2
 
 ### Basic 
 
-1. Open the file `demo/carousel/index.Rmd`.
+1. Open the file `demo/layouts/carousel/index.Rmd`.
 2. Run `slidify("index.Rmd")`.
 3. Open `index.html`.
 

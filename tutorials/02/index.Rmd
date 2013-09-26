@@ -5,7 +5,7 @@ author   : Ramnath Vaidyanathan
 mode     : selfcontained # {standalone, draft}
 url      : {lib: "../../libraries"}
 hitheme  : solarized_light
-editlink : "tutorials/05"
+editlink : "tutorials/02"
 assets:
   js:
     - "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"
